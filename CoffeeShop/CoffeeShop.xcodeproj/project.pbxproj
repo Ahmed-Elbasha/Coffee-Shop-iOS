@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E3B9DBF20D95D1000754284 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B9DBE20D95D1000754284 /* Order.swift */; };
+		7E3B9DC120D9641700754284 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B9DC020D9641700754284 /* OrderDetailsViewController.swift */; };
 		7E47F06820C4705A008C1EE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E47F06720C4705A008C1EE1 /* AppDelegate.swift */; };
 		7E47F06A20C4705A008C1EE1 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E47F06920C4705A008C1EE1 /* OrderViewController.swift */; };
 		7E47F06D20C4705A008C1EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E47F06B20C4705A008C1EE1 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E3B9DBE20D95D1000754284 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		7E3B9DC020D9641700754284 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		7E47F06420C4705A008C1EE1 /* CoffeeShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E47F06720C4705A008C1EE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E47F06920C4705A008C1EE1 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				7E47F06720C4705A008C1EE1 /* AppDelegate.swift */,
+				7E3B9DBE20D95D1000754284 /* Order.swift */,
 				7E47F06920C4705A008C1EE1 /* OrderViewController.swift */,
+				7E3B9DC020D9641700754284 /* OrderDetailsViewController.swift */,
 				7E47F06B20C4705A008C1EE1 /* Main.storyboard */,
 				7E47F06E20C4705C008C1EE1 /* Assets.xcassets */,
 				7E47F07020C4705C008C1EE1 /* LaunchScreen.storyboard */,
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E3B9DC120D9641700754284 /* OrderDetailsViewController.swift in Sources */,
+				7E3B9DBF20D95D1000754284 /* Order.swift in Sources */,
 				7E47F06A20C4705A008C1EE1 /* OrderViewController.swift in Sources */,
 				7E47F06820C4705A008C1EE1 /* AppDelegate.swift in Sources */,
 			);

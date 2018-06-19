@@ -21,6 +21,7 @@ class OrderViewController: UIViewController {
     var addWhippedCream : Bool = true
     var quantity : Double = 0
     var customerName : String = ""
+    var order: Order!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,15 @@ class OrderViewController: UIViewController {
     }
 
     @IBAction func orderButtonPressed(_ sender: Any) {
-        print("order button was pressed")
+        customerName = customerNameTextField.text!
+        order = Order.init()
+        
+        order.customerName = self.customerName
+        order.addChocolate = self.addChocolate
+        order.addWhippedCream = self.addWhippedCream
+        order.quantity = self.quantity
+        
+        performSegue(withIdentifier: "showOrderDetails", sender: order)
     }
     
     @IBAction func stepperValueChanged(_ sender: Any) {
@@ -58,6 +67,15 @@ class OrderViewController: UIViewController {
     
     @IBAction func addWhippedCreamSwitchValueChanged(_ sender: Any) {
         addWhippedCream = addWhippedCreamSwitch.isOn
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showOrderDetails" {
+            let orderDetailsVC : OrderDetailsViewController = segue.destination as! OrderDetailsViewController
+            let generatedOrder : Order = order
+            let price : Double = generatedOrder.getPrice()
+            orderDetailsVC.initData(order: generatedOrder, totalPrice: price)
+        }
     }
 }
 
