@@ -76,10 +76,10 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CeX-jR-bXn">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CeX-jR-bXn">
                                                         <rect key="frame" x="143" y="0.0" width="200" height="29"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="200" id="4pw-GV-ehf"/>
+                                                            <constraint firstAttribute="width" constant="200" id="Fas-iV-r8t"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -102,6 +102,9 @@
                                                             <constraint firstAttribute="width" constant="50" id="Y4z-rg-Z0G"/>
                                                         </constraints>
                                                         <color key="onTintColor" red="0.96470588239999999" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="addChocolateSwitchValueChanged:" destination="B39-ii-BxL" eventType="valueChanged" id="6bi-bK-Us7"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -120,6 +123,9 @@
                                                             <constraint firstAttribute="width" constant="50" id="QM2-6a-0jw"/>
                                                         </constraints>
                                                         <color key="onTintColor" red="0.96470588239999999" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="addWhippedCreamSwitchValueChanged:" destination="B39-ii-BxL" eventType="valueChanged" id="nKP-Fe-9Th"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -135,6 +141,9 @@
                                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="sjz-m4-UT9">
                                                         <rect key="frame" x="171" y="0.0" width="94" height="29"/>
                                                         <color key="tintColor" red="0.96470588239999999" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="stepperValueChanged:" destination="B39-ii-BxL" eventType="valueChanged" id="U1j-BY-3mu"/>
+                                                        </connections>
                                                     </stepper>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C1n-n1-97f">
                                                         <rect key="frame" x="273" y="0.0" width="70" height="29"/>
