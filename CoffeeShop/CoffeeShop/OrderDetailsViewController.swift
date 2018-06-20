@@ -10,7 +10,11 @@ import UIKit
 
 class OrderDetailsViewController: UIViewController {
     
-    
+    @IBOutlet weak var customerNameLabel: UILabel!
+    @IBOutlet weak var hasChocolateLabel: UILabel!
+    @IBOutlet weak var hasWhippedCreamLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     var order : Order!
     var totalPrice: Int = 0
@@ -44,4 +48,13 @@ class OrderDetailsViewController: UIViewController {
     }
     */
 
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        print("back button was pressed")
+    }
+    
+    @IBAction func submitOrderButtonPressed(_ sender: Any) {
+        print("submit order button was pressed")
+    }
+    
 }

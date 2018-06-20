@@ -230,6 +230,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzo-Pu-9FR">
                                                 <rect key="frame" x="16" y="18" width="59" height="22"/>
                                                 <state key="normal" title="  back" image="backbutton"/>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="tQH-8A-izS" eventType="touchUpInside" id="2el-BT-BEO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96470588239999999" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -254,6 +257,7 @@
                                         </state>
                                         <connections>
                                             <action selector="orderButtonPressed:" destination="B39-ii-BxL" eventType="touchUpInside" id="fc2-6g-Q2z"/>
+                                            <action selector="submitOrderButtonPressed:" destination="tQH-8A-izS" eventType="touchUpInside" id="6Pu-Hd-MSp"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvy-DU-NCS">
@@ -398,6 +402,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kpq-rj-nEd"/>
                     </view>
+                    <connections>
+                        <outlet property="customerNameLabel" destination="r79-46-Bso" id="1fW-zb-RVs"/>
+                        <outlet property="hasChocolateLabel" destination="AxI-zl-KSX" id="RCq-Hk-gcs"/>
+                        <outlet property="hasWhippedCreamLabel" destination="Pts-Tj-ASZ" id="Srp-fJ-opy"/>
+                        <outlet property="priceLabel" destination="exI-hQ-Cb6" id="2pO-8O-YdB"/>
+                        <outlet property="quantityLabel" destination="3Pv-wC-pxX" id="L6J-cP-zO7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmN-j0-lEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
