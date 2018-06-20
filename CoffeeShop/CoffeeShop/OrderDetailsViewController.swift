@@ -47,10 +47,16 @@ class OrderDetailsViewController: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: Any) {
         print("back button was pressed")
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func submitOrderButtonPressed(_ sender: Any) {
         print("submit order button was pressed")
+        let alert = UIAlertController(title: "Thank you", message: "Thank you for purchase", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func configureUi() {

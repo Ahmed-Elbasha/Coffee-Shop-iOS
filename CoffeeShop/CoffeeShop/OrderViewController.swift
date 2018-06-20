@@ -29,12 +29,7 @@ class OrderViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        addChocolateSwitch.isOn = false
-        addWhippedCreamSwitch.isOn = false
-        addChocolate = addChocolateSwitch.isOn
-        addWhippedCream = addWhippedCreamSwitch.isOn
-        quantity = Int(quantityStepper.value)
-        quantityTextValue.text = String(describing: quantity)
+        resetUiToDefault()
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +62,19 @@ class OrderViewController: UIViewController {
     
     @IBAction func addWhippedCreamSwitchValueChanged(_ sender: Any) {
         addWhippedCream = addWhippedCreamSwitch.isOn
+    }
+    
+    func resetUiToDefault() {
+        addChocolateSwitch.isOn = false
+        addWhippedCreamSwitch.isOn = false
+        addChocolate = addChocolateSwitch.isOn
+        addWhippedCream = addWhippedCreamSwitch.isOn
+        
+        customerNameTextField.text = ""
+        
+        quantityStepper.value = quantityStepper.minimumValue
+        quantity = Int(quantityStepper.value)
+        quantityTextValue.text = String(describing: quantity)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
