@@ -10,13 +10,18 @@ import UIKit
 
 class OrderDetailsViewController: UIViewController {
     
+    
+    
     var order : Order!
-    var totalPrice: Double = 0
+    var totalPrice: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print("price: \(totalPrice)")
+        print("Name: \(self.order.customerName)")
+        print("add Chocolate: \(self.order.addChocolate)")
+        print("add Whipped Cream: \(self.order.addWhippedCream)")
+        print("quantity: \(self.order.quantity)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +29,9 @@ class OrderDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func initData( order : Order, totalPrice : Double ) {
+    func initData( order : Order, totalPrice : Int ) {
         self.order = order
         self.totalPrice = totalPrice
-        print("price: \(totalPrice)")
-        print("Name: \(self.order.customerName)")
-        print("add Chocolate: \(self.order.addChocolate)")
-        print("add Whipped Cream: \(self.order.addWhippedCream)")
-        print("quantity: \(self.order.quantity)")
     }
 
     /*

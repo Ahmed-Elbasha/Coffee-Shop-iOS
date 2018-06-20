@@ -10,12 +10,12 @@ import Foundation
 
 class Order : NSObject{
     
-    var customerName : String!
-    var addChocolate: Bool!
-    var addWhippedCream: Bool!
-    var quantity: Double!
+    var customerName : String = ""
+    var addChocolate: Bool = false
+    var addWhippedCream: Bool = false
+    var quantity: Int = 0
     
-    func getPrice() -> Double {
+    func getPrice() -> Int {
         return self.quantity * 5
     }
 }

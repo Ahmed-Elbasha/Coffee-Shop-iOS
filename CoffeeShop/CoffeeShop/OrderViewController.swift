@@ -19,7 +19,7 @@ class OrderViewController: UIViewController {
     
     var addChocolate : Bool = true
     var addWhippedCream : Bool = true
-    var quantity : Double = 0
+    var quantity : Int = 0
     var customerName : String = ""
     var order: Order!
     
@@ -33,7 +33,7 @@ class OrderViewController: UIViewController {
         addWhippedCreamSwitch.isOn = false
         addChocolate = addChocolateSwitch.isOn
         addWhippedCream = addWhippedCreamSwitch.isOn
-        quantity = quantityStepper.value
+        quantity = Int(quantityStepper.value)
         quantityTextValue.text = String(describing: quantity)
     }
 
@@ -55,7 +55,7 @@ class OrderViewController: UIViewController {
     }
     
     @IBAction func stepperValueChanged(_ sender: Any) {
-        quantity = quantityStepper.value
+        quantity = Int(quantityStepper.value)
         quantityTextValue.text = String(describing: quantity)
     }
     
@@ -73,7 +73,7 @@ class OrderViewController: UIViewController {
         if segue.identifier == "showOrderDetails" {
             let orderDetailsVC : OrderDetailsViewController = segue.destination as! OrderDetailsViewController
             let generatedOrder : Order = order
-            let price : Double = generatedOrder.getPrice()
+            let price : Int = generatedOrder.getPrice()
             orderDetailsVC.initData(order: generatedOrder, totalPrice: price)
         }
     }
