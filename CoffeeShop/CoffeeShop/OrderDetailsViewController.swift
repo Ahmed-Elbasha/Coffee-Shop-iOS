@@ -8,7 +8,11 @@
 
 import UIKit
 
+// MARK: OrderDetailsViewController Class
+
 class OrderDetailsViewController: UIViewController {
+    
+    // MARK: IBOutlets
     
     @IBOutlet weak var customerNameLabel: UILabel!
     @IBOutlet weak var hasChocolateLabel: UILabel!
@@ -16,18 +20,27 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    // MARK: Class's states
+    
     var order : Order!
     var totalPrice: Int = 0
+    
+    // ViewController'x Life Cycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUi()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configureUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Intialize ViewController's Data
     
     func initData( order : Order, totalPrice : Int ) {
         self.order = order
@@ -44,14 +57,13 @@ class OrderDetailsViewController: UIViewController {
     }
     */
 
+    // MARK: IBActions
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        print("back button was pressed")
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func submitOrderButtonPressed(_ sender: Any) {
-        print("submit order button was pressed")
         let alert = UIAlertController(title: "Thank you", message: "Thank you for purchase", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
             self.dismiss(animated: true, completion: nil)
@@ -59,7 +71,9 @@ class OrderDetailsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func configureUi() {
+    // MARK: UI Configuration
+    
+    func configureUI() {
         customerNameLabel.text = order.customerName
         
         if (order.addChocolate) {

@@ -8,7 +8,11 @@
 
 import UIKit
 
+// MARK: OrderViewController Class
+
 class OrderViewController: UIViewController {
+    
+    // MARK: IBOutlets
     
     @IBOutlet weak var customerNameTextField: UITextField!
     @IBOutlet weak var addChocolateSwitch: UISwitch!
@@ -17,11 +21,15 @@ class OrderViewController: UIViewController {
     @IBOutlet weak var quantityTextValue: UITextField!
     @IBOutlet weak var orderButton: UIButton!
     
+    // MARK: Class's States
+    
     var addChocolate : Bool = true
     var addWhippedCream : Bool = true
     var quantity : Int = 0
     var customerName : String = ""
     var order: Order!
+    
+    // MARK: ViewController's Life Cycle Methods.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +37,15 @@ class OrderViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        resetUiToDefault()
+        resetUIToDefault()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: IBActions
 
     @IBAction func orderButtonPressed(_ sender: Any) {
         customerName = customerNameTextField.text!
@@ -64,7 +74,9 @@ class OrderViewController: UIViewController {
         addWhippedCream = addWhippedCreamSwitch.isOn
     }
     
-    func resetUiToDefault() {
+    // MARK: UI Configuration.
+    
+    func resetUIToDefault() {
         addChocolateSwitch.isOn = false
         addWhippedCreamSwitch.isOn = false
         addChocolate = addChocolateSwitch.isOn
@@ -76,6 +88,8 @@ class OrderViewController: UIViewController {
         quantity = Int(quantityStepper.value)
         quantityTextValue.text = String(describing: quantity)
     }
+    
+    // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showOrderDetails" {
