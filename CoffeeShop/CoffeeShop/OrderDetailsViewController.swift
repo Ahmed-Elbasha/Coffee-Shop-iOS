@@ -21,11 +21,7 @@ class OrderDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("price: \(totalPrice)")
-        print("Name: \(self.order.customerName)")
-        print("add Chocolate: \(self.order.addChocolate)")
-        print("add Whipped Cream: \(self.order.addWhippedCream)")
-        print("quantity: \(self.order.quantity)")
+        configureUi()
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,4 +53,22 @@ class OrderDetailsViewController: UIViewController {
         print("submit order button was pressed")
     }
     
+    func configureUi() {
+        customerNameLabel.text = order.customerName
+        
+        if (order.addChocolate) {
+            hasChocolateLabel.text = "Yes"
+        } else {
+            hasChocolateLabel.text = "No"
+        }
+        
+        if (order.addWhippedCream) {
+            hasWhippedCreamLabel.text = "Yes"
+        } else {
+            hasWhippedCreamLabel.text = "No"
+        }
+        
+        quantityLabel.text = String(describing: order.quantity)
+        priceLabel.text = String(describing: totalPrice)
+    }
 }
